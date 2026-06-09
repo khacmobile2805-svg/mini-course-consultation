@@ -1,0 +1,14 @@
+# Composer
+/vendor/
+
+# Dữ liệu runtime (tùy chọn, nếu không muốn commit dữ liệu test)
+/storage/*.json
+
+# IDE & hệ điều hành
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Log
+*.log
