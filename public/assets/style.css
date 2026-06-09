@@ -22,3 +22,50 @@ textarea { min-height: 120px; }
 .table th { background: #f1f5f9; }
 .honeypot { display: none; }
 .inline-form { display: inline; }
+
+/* === Hiệu ứng mượt === */
+
+/* Ô nhập: viền + glow + nhấc nhẹ khi focus */
+input, select, textarea {
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .15);
+    transform: translateY(-2px);
+}
+
+/* Card: nổi lên khi rê chuột */
+.card {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, .12);
+}
+
+/* Card dạng link (trên trang Home): bỏ gạch chân, kế thừa màu chữ */
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.card-link:hover {
+    border-color: #2563eb;
+}
+
+/* Nút: nhấc nhẹ và đổ bóng khi rê chuột, lún xuống khi nhấn */
+.btn {
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, .25);
+    filter: brightness(1.05);
+}
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
