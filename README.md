@@ -107,7 +107,7 @@ mini-course-consultation/
 |-----------------------|------------------------------------------------|-------------------------------------------|
 | Fallback `?? ''`      | `ConsultationController::store()`              | Chống thiếu key khi user xóa field (F12)  |
 | Normalize `trim()`    | `store()`, `handleLogin()`                     | Cắt khoảng trắng thừa                      |
-| Escape `htmlspecialchars` | helper `h()` dùng ở mọi view               | Chống XSS                                 |
+| Escape `htmlspecialchars` | helper `h()` dùng ở mọi view                 | Chống XSS                                 |
 | Validate theo trình tự | `ConsultationController::validate()`          | Required → Format → Logic                 |
 | Honeypot              | field ẩn `website` + `validate()`              | Bẫy bot tự động                           |
 | Rate limit            | `validate()` (5 giây)                          | Chặn gửi form liên tục                     |
