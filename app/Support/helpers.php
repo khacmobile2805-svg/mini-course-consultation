@@ -39,7 +39,7 @@ function require_login(): void
 
 function check_session_timeout(): void
 {
-    $idleLimit = 5; // demo; nhớ đổi lại 15 * 60 khi xong
+    $idleLimit = 15 * 60; // demo; nhớ đổi lại 15 * 60 khi xong
 
     if (!isset($_SESSION['user_id'])) {
         return;
