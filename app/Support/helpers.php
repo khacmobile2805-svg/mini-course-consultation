@@ -39,7 +39,7 @@ function require_login(): void
 
 function check_session_timeout(): void
 {
-    $idleLimit = 15 * 60;
+    $idleLimit = 5; // demo; nhớ đổi lại 15 * 60 khi xong
 
     if (!isset($_SESSION['user_id'])) {
         return;
@@ -47,8 +47,8 @@ function check_session_timeout(): void
 
     $last = $_SESSION['last_activity_at'] ?? time();
     if (time() - $last > $idleLimit) {
-        logout_clean();
-        session_start();
+        $_SESSION = [];                 // xóa dữ liệu user
+        session_regenerate_id(true);    // hủy phiên cũ + phát cookie mới
         flash_set('error', 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.');
         redirect('/login');
     }

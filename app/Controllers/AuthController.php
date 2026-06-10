@@ -78,12 +78,12 @@ class AuthController
         redirect('/dashboard');
     }
 
-    public function logout(): void
-    {
-        logout_clean();
-
-        session_start();
-        flash_set('success', 'Đăng xuất thành công. Session cũ đã được xóa.');
-        redirect('/login');
-    }
+   public function logout(): void
+{
+    logout_clean();              // xóa biến + cookie + destroy phiên cũ
+    session_start();             // mở phiên mới
+    session_regenerate_id(true); // ép cookie mới -> flash sống sót qua redirect
+    flash_set('success', 'Đăng xuất thành công. Session cũ đã được xóa.');
+    redirect('/login');
+}
 }
