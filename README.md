@@ -27,7 +27,7 @@ composer dump-autoload
 php -S localhost:8000 -t public
 ```
 
-M��: http://localhost:8000/ — Tài khoản demo: `student@example.com` / `123456`
+Mở: http://localhost:8000/ — Tài khoản demo: `student@example.com` / `123456`
 
 > Lưu ý: chạy lệnh tại thư mục chứa `composer.json` và thư mục `public`.
 
@@ -84,4 +84,4 @@ Lab04 dùng file JSON thay database và chưa có CSRF token (SameSite=Lax chỉ
 ## 8. Ghi chú kỹ thuật
 
 - Dữ liệu lưu vào `storage/consultations.json` với `JSON_UNESCAPED_UNICODE` để giữ tiếng Việt.
-- Mật khẩu băm bằng `password_hash()`, xác thực bằng `password_verify()`.
+- Mật khẩu băm bằng `password_hash()`, xác thực bằng `password_verify()`.Get-Content .\mini-course-consultation\README.md
